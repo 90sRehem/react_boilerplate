@@ -1,5 +1,15 @@
+import { BrowserRouter } from 'react-router-dom';
+import { Routes } from 'routes';
+import { AppProvider } from './contexts';
+
 function App(): JSX.Element {
-  return <h1>Hello World</h1>;
+  return (
+    <BrowserRouter>
+      <AppProvider>
+        <Routes />
+      </AppProvider>
+    </BrowserRouter>
+  );
 }
 
 export default App;
