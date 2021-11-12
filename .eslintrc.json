@@ -45,13 +45,14 @@
       }
     ],
     "no-use-before-define": "off",
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "no-shadow": "off",
     "no-console": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "no-param-reassign": "warn"
   },
   "settings": {
     "import/resolver": {

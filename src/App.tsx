@@ -1,14 +1,11 @@
-import { BrowserRouter } from 'react-router-dom';
-import { Routes } from 'routes';
-import { AppProvider } from './contexts';
+import { AppRoutes } from '@/routes';
+import { AppProvider } from '@/providers';
 
 function App(): JSX.Element {
   return (
-    <BrowserRouter>
-      <AppProvider>
-        <Routes />
-      </AppProvider>
-    </BrowserRouter>
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
   );
 }
 
