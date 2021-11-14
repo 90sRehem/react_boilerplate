@@ -1,4 +1,4 @@
-# ⚙️ Project Configuration
+# ⚙️ Configuração do projeto
 
 O aplicativo foi inicializado usando `Create React App` por razões de simplicidade. Ele nos permite criar aplicativos rapidamente sem lidar com uma configuração de ferramentas complexa, como agrupamento, transpilação, etc.
 
@@ -56,4 +56,4 @@ Para projetos TypeScript:
 
 Neste projeto, temos que criar outro arquivo tsconfig `tsconfig.paths.json` onde configuramos os caminhos e o fundimos com a configuração base, porque o CRA irá sobrescrevê-lo de outra forma.
 
-Também é possível definir vários caminhos para várias pastas (como `@ components`,` @ hooks`, etc.), mas usar `@ / *` funciona muito bem porque é curto o suficiente para que não haja necessidade de configurar caminhos múltiplos e difere de outros módulos de dependência, então não há confusão no que vem de `node_modules` e qual é a nossa pasta de origem. Isso significa que qualquer coisa na pasta `src` pode ser acessada via` @ `, por exemplo, algum arquivo que reside em` src / components / MyComponent` pode ser acessado usando `@ / components / MyComponents`.
+Também é possível definir vários caminhos para várias pastas (como `@ components`,` @ hooks`, etc.), mas usar `@ / *` funciona muito bem porque é curto o suficiente para que não haja necessidade de configurar caminhos múltiplos e difere de outros módulos de dependência, então não há confusão no que vem de `node_modules` e qual é a nossa pasta de origem. Isso significa que qualquer coisa na pasta `src` pode ser acessada via`@`, por exemplo, algum arquivo que reside em` src / components / MyComponent` pode ser acessado usando `@ / components / MyComponents`.
