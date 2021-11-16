@@ -8,13 +8,13 @@ Você deve sempre configurar e usar as seguintes ferramentas:
 
 ESLint é uma ferramenta linting para JavaScript. Ao fornecer uma configuração específica definida no arquivo`.eslintrc.js`, evita que os desenvolvedores cometam erros bobos em seu código e reforça a consistência na base de código.
 
-[ESLint Configuration Example Code](../.eslintrc.js)
+[ESLint Configuration Example Code](../.eslintrc.json)
 
 #### Prettier
 
 Esta é uma ótima ferramenta para formatar código. Ele impõe um estilo de código consistente em toda a sua base de código. Ao utilizar o recurso "formatar ao salvar" em seu IDE, você pode formatar automaticamente o código com base na configuração fornecida no arquivo `.prettierrc`. Ele também fornecerá um bom feedback quando algo estiver errado com o código. Se a formatação automática não funcionar, algo está errado com o código.
 
-[Prettier Configuration Example Code](../.prettierrc)
+[Prettier Configuration Example Code](../.prettie.config.js)
 
 #### TypeScript
 
