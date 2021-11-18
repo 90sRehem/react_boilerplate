@@ -1,4 +1,8 @@
-import { createTheme, ThemeProvider as MUIThemeProvider } from '@mui/material';
+import {
+  createTheme,
+  CssBaseline,
+  ThemeProvider as MUIThemeProvider,
+} from '@mui/material';
 import {
   createContext,
   ReactNode,
@@ -19,7 +23,7 @@ interface ThemeContextData {
 const ThemeContext = createContext({} as ThemeContextData);
 
 const ThemeProvider = ({ children }: ThemeProviderProps): JSX.Element => {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const [mode, setMode] = useState<'light' | 'dark'>('dark');
 
   const toggleColorMode = useCallback(() => {
     setMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'));
@@ -37,6 +41,7 @@ const ThemeProvider = ({ children }: ThemeProviderProps): JSX.Element => {
 
   return (
     <ThemeContext.Provider value={{ toggleColorMode }}>
+      <CssBaseline />
       <MUIThemeProvider theme={theme}>{children}</MUIThemeProvider>
     </ThemeContext.Provider>
   );

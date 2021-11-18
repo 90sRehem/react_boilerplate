@@ -7,7 +7,11 @@ export const Login = (): JSX.Element => {
 
   return (
     <Layout>
-      <LoginForm onSuccess={() => navigate('/app')} />
+      <LoginForm
+        onSuccess={() => {
+          // navigate('/app')
+        }}
+      />
     </Layout>
   );
 };

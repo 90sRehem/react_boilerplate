@@ -3,10 +3,12 @@ import { Button, CircularProgress } from '@mui/material';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { ErrorBoundary } from 'react-error-boundary';
-
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { queryClient } from '@/lib/react-query';
+
+import { AuthProvider } from '@/lib/auth';
+import { ThemeProvider } from '../styles/theme';
 
 interface AppProviderProps {
   children: ReactNode;
@@ -51,14 +53,18 @@ export function AppProvider({ children }: AppProviderProps): JSX.Element {
         </div>
       }
     >
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <QueryClientProvider client={queryClient}>
-          {process.env.NODE_ENV !== 'production' && (
-            <ReactQueryDevtools position="bottom-right" />
-          )}
-          <Router>{children}</Router>
-        </QueryClientProvider>
-      </ErrorBoundary>
+      <ThemeProvider>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <QueryClientProvider client={queryClient}>
+            {process.env.NODE_ENV === 'development' && (
+              <ReactQueryDevtools position="bottom-right" />
+            )}
+            <AuthProvider>
+              <Router>{children}</Router>
+            </AuthProvider>
+          </QueryClientProvider>
+        </ErrorBoundary>
+      </ThemeProvider>
     </Suspense>
   );
 }

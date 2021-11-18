@@ -36,6 +36,7 @@ export const Form = <
     ...options,
     resolver: schema && zodResolver(schema),
   });
+
   return (
     <form
       className={className}
