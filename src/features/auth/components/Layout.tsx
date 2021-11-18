@@ -38,7 +38,7 @@ export function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <Container
       component="main"
-      maxWidth={isMobile ? 'sm' : 'xl'}
+      maxWidth={isMobile && 'sm'}
       sx={{
         display: 'flex',
         width: '100vw',

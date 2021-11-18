@@ -7,8 +7,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { queryClient } from '@/lib/react-query';
 
-import { AuthProvider } from '@/lib/auth';
-import { ThemeProvider } from '../styles/theme';
+import { ThemeProvider } from './theme';
+import { AuthProvider } from './auth';
 
 interface AppProviderProps {
   children: ReactNode;

@@ -10,8 +10,8 @@ import { Controller } from 'react-hook-form';
 import { Brightness7, Brightness4 } from '@mui/icons-material';
 
 import { Form, InputField } from '@/components/Form';
-import { useCustomTheme } from '@/styles/theme';
-import { useAuth } from '@/lib/auth';
+import { useCustomTheme } from '@/providers/theme';
+import { useAuth } from '@/providers/auth';
 
 const schema = z.object({
   email: z.string().optional(),

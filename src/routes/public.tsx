@@ -1,3 +1,6 @@
+import { Suspense } from 'react';
+import { Outlet, Navigate } from 'react-router-dom';
+import { Fallback } from '@/components/Elements';
 import { lazyImport } from '@/utils/lazyImport';
 
 const { AuthRoutes } = lazyImport(
@@ -5,9 +8,23 @@ const { AuthRoutes } = lazyImport(
   'AuthRoutes',
 );
 
+const App = () => {
+  return (
+    <>
+      <Suspense fallback={<Fallback />}>
+        <Outlet />
+      </Suspense>
+    </>
+  );
+};
+
 export const publicRoutes = [
   {
-    path: '//*',
-    element: <AuthRoutes />,
+    path: '/',
+    element: <App />,
+    children: [
+      { path: '/', element: <AuthRoutes /> },
+      { path: '*', element: <Navigate to="." /> },
+    ],
   },
 ];

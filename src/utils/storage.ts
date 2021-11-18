@@ -49,3 +49,8 @@ export const storage = {
     }
   },
 };
+
+// exemplo
+// storage.getItem({ key: 'user', storageType: 'local' });
+// storage.setItem({ key: 'user', storageType: 'local', values: obj });
+// storage.clearItem({ key: 'user', storageType: 'local' });
