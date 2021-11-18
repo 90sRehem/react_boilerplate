@@ -33,7 +33,6 @@ export const LoginForm = ({ onSuccess }: LoginFormProps): JSX.Element => {
   const theme = useTheme();
   const { signIn, loading } = useAuth();
   const { toggleColorMode } = useCustomTheme();
-
   return (
     <>
       <Form<LoginValues, typeof schema>

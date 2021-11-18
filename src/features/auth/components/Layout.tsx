@@ -6,7 +6,7 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material';
-import { Link } from '@/components/Elements/Link';
+import { Link } from '@/components/Elements';
 import { ReactNode } from 'react';
 
 type LayoutProps = {

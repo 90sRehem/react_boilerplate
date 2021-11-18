@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import { queryClient } from '@/lib/react-query';
 
+import { Notifications } from '@/components/Notifications';
 import { ThemeProvider } from './theme';
 import { AuthProvider } from './auth';
 
@@ -59,6 +60,7 @@ export function AppProvider({ children }: AppProviderProps): JSX.Element {
             {process.env.NODE_ENV === 'development' && (
               <ReactQueryDevtools position="bottom-right" />
             )}
+            <Notifications />
             <AuthProvider>
               <Router>{children}</Router>
             </AuthProvider>

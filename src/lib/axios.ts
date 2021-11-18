@@ -2,6 +2,7 @@ import Axios, { AxiosRequestConfig, AxiosError } from 'axios';
 import { API_URL, storagePrefix } from '@/config';
 import { storage } from '@/utils/storage';
 import { getRefreshToken } from '@/features/auth';
+import { useNotificationStore } from '@/stores';
 
 let isRefreshing = false;
 let failedRequestsQueue: {
@@ -180,6 +181,12 @@ axios.interceptors.response.use(
         window.location.href = '/';
       }, 5000);
       return Promise.reject(new Error('Error with auth token'));
+    }
+    if (error) {
+      const message = error.response?.data?.message || error.message;
+      useNotificationStore
+        .getState()
+        .addNotification({ type: 'error', title: 'Erro', message });
     }
     return Promise.reject(error);
   },
